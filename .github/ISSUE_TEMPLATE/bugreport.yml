@@ -34,21 +34,21 @@ body:
     id: kernel
     attributes:
       label: Kernel Version
-    validation:
+    validations:
       required: true
 
   - type: input
     id: baseband
     attributes:
       label: Baseband Version
-    validation:
+    validations:
       required: true
 
   - type: input
     id: mods
     attributes:
       label: System Modifications (google apps, magisk, etc)
-    validation:
+    validations:
       required: true
 
   - type: textarea

@@ -7,6 +7,7 @@ body:
       value: |
         Before submitting your issue please:
         - Check if the **Issues section** has a similar issue.
+        - Read the directions [here](https://wiki.lineageos.org/how-to/bugreport)
 
   - type: input
     id: device
@@ -14,6 +15,8 @@ body:
       label: Device
       description: |
         codename of the device you're using (ie: "mako", not "nexus 4")
+    validations:
+      required: true
 
   - type: input
     id: version

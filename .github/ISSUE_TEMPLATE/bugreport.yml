@@ -12,7 +12,8 @@ body:
     id: device
     attributes:
       label: Device
-      description: codename of the device you're using (ie: "mako", not "nexus 4")
+      description: |
+        codename of the device you're using (ie: "mako", not "nexus 4")
 
   - type: input
     id: version

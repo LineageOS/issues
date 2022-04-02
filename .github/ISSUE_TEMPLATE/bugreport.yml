@@ -1,0 +1,91 @@
+name: Bug Report
+description: Report an issue to help us improve
+labels: [Bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting your issue please:
+        - Check if the **Issues section** has a similar issue.
+
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: codename of the device you're using (ie: "mako", not "nexus 4")
+
+  - type: input
+    id: version
+    attributes:
+      label: "LineageOS Version"
+      description: "'Latest' is not a valid answer, please write the exact version number."
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Build Date
+    validations:
+      required: true
+
+  - type: input
+    id: kernel
+    attributes:
+      label: Kernel Version
+    validation:
+      required: true
+
+  - type: input
+    id: baseband
+    attributes:
+      label: Baseband Version
+    validation:
+      required: true
+
+  - type: input
+    id: mods
+    attributes:
+      label: System Modifications (google apps, magisk, etc)
+    validation:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Possible Solution
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to Reproduce
+    validations:
+      required: true
+
+  - type: dropdown
+    id: directions
+    attributes:
+      label: "I have read the directions"
+      description: "https://wiki.lineageos.org/how-to/bugreport"
+      options:
+        - 'No'
+        - 'Yes'
+    validations:
+      required: true
+

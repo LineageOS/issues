@@ -8,6 +8,16 @@ body:
         Before submitting your issue please:
         - Check if the **Issues section** has a similar issue.
         - Read the directions [here](https://wiki.lineageos.org/how-to/bugreport)
+        
+        What not to report
+        - Bugs in unofficial builds or anything not downloaded from our official portal
+        - Missing Builds
+        - Problems with the website
+        - Asking for device support
+        - Feature requests
+
+        If you need help, please see https://wiki.lineageos.org/how-to/bugreport#android-bugs for more detailed instructions on how to report bugs or https://www.lineageos.org/community/ for ways to get in touch with the community.
+
 
   - type: input
     id: device

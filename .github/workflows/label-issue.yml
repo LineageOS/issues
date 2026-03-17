@@ -14,7 +14,7 @@ jobs:
 
     - name: Parse issue body
       id: issue-parser
-      uses: edumserrano/github-issue-forms-parser@51ff8940d0acaffc1848e0c55e9c0329220d8c38
+      uses: edumserrano/github-issue-forms-parser@f4e7864950f591c91ddd5215592484a4c789cebd
       continue-on-error: true
       with:
         template-filepath: '.github/ISSUE_TEMPLATE/bugreport.yml'

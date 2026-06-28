@@ -111,7 +111,7 @@ def issue_errors(issue: IssueBody) -> list:
             break
     else:
         ret.append(
-            f'Device "{issue.device}" is not a valid device codename. Supported values are: {", ".join([f"`{device}`" for device in devices.keys()])}'
+            f'Device "{issue.device}" is not a valid device codename. Supported values are: {", ".join([f"`{device}`" for device in sorted(devices.keys(), key=str.lower)])}'
         )
 
     if device_version := devices.get(issue.device, None):

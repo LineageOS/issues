@@ -73,6 +73,18 @@ def device_list() -> dict:
     return ret
 
 
+def device_names() -> list:
+    ret = []
+
+    for x in requests.get(
+        'https://raw.githubusercontent.com/LineageOS/hudson/main/updater/devices.json',
+        timeout=5,
+    ).json():
+        ret.append((x['oem'], x['name'], x['model']))
+
+    return ret
+
+
 def device_maintainers(device: str) -> list:
     ret = []
 
@@ -110,9 +122,20 @@ def issue_errors(issue: IssueBody) -> list:
             issue.device = device
             break
     else:
-        ret.append(
-            f'Device "{issue.device}" is not a valid device codename. Supported values are: {", ".join([f"`{device}`" for device in sorted(devices.keys(), key=str.lower)])}'
-        )
+        names = device_names()
+        names.sort(key=lambda x: (x[0].lower(), x[1].lower(), x[2].lower()))
+
+        text = f'Device "{issue.device}" is not a valid device codename. Supported values are listed below:\n'
+        text += '  <details>'
+        text += '  <summary>Devices</summary>\n\n'
+        text += '  | Vendor | Model | Codename |\n'
+        text += '  |--------|-------|----------|\n'
+        for vendor, device, codename in names:
+            if codename in devices:
+                text += f'  | {vendor} | {device} | {codename} |\n'
+        text += '\n  </details>'
+
+        ret.append(text)
 
     if device_version := devices.get(issue.device, None):
         if issue.version != device_version:

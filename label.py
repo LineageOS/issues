@@ -125,14 +125,14 @@ def issue_errors(issue: IssueBody) -> list:
         names = device_names()
         names.sort(key=lambda x: (x[0].lower(), x[1].lower(), x[2].lower()))
 
-        text = f'Device "{issue.device}" is not a valid device codename. Supported values are listed below:\n'
+        text = f'"{issue.device}" is not a valid device codename. Supported values are listed below, in the **codename** column:\n'
         text += '  <details>'
         text += '  <summary>Devices</summary>\n\n'
-        text += '  | Vendor | Model | Codename |\n'
+        text += '  | Vendor | Model | **Codename** |\n'
         text += '  |--------|-------|----------|\n'
         for vendor, model, codename in names:
             if codename in devices:
-                text += f'  | {vendor} | {model} | {codename} |\n'
+                text += f'  | {vendor} | {model} | **{codename}** |\n'
         text += '  </details>'
 
         ret.append(text)

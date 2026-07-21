@@ -231,7 +231,7 @@ def main() -> None:
             '\n'.join(
                 [
                     "Hi! It appears you didn't read or follow the provided issue template.",
-                    'Please edit your issue to correct problems listed below.',
+                    'Please edit your issue to correct problems listed below and it will be automatically reopened.',
                     'For more information please see https://wiki.lineageos.org/how-to/bugreport.',
                     '',
                     'Problems:',

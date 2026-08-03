@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import pprint
 import sys
 
 from label import IssueBody, parse_issue
@@ -14,8 +15,7 @@ def main() -> None:
 
     issue_body = IssueBody(parse_issue(issue_body, issue_template))
 
-    for key, value in issue_body.__dict__.items():
-        print(f'{key}:\n{value}\n')
+    pprint.pp(issue_body.__dict__)
 
 
 if __name__ == '__main__':

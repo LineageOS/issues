@@ -34,7 +34,7 @@ def parse_issue(
             key = match.group('key')
             value = match.group('value')
 
-            if key is None or value is None or key == '' or value == '':
+            if key is None or value is None or key == '':
                 continue
 
             if any(field.label == key for field in parsed_template.values()):
@@ -43,7 +43,7 @@ def parse_issue(
                 )
                 continue
 
-            if len(parsed_matches) == 0:
+            if value == '' or len(parsed_matches) == 0:
                 continue
 
             parsed_matches[-1]['value'] = (
@@ -51,6 +51,11 @@ def parse_issue(
             )
 
         for match in parsed_matches:
+            value = match['value']
+
+            if value.strip() == '':
+                continue
+
             key = match['key']
 
             for parsed_key, parsed_field in parsed_template.items():
@@ -58,9 +63,7 @@ def parse_issue(
                     key = parsed_key
                     break
 
-            parsed_issue[key] = format_value(
-                match['value'], parsed_template.get(key)
-            )
+            parsed_issue[key] = format_value(value, parsed_template.get(key))
     else:
         for match in matches:
             key = match.group('key')

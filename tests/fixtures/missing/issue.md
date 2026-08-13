@@ -6,7 +6,7 @@ who's molecule is this? (we don't know)
 
 ### Ersilia ID
 
-None
+_No response_
 
 ### Publication
 
@@ -16,6 +16,6 @@ The following link is just an example:
 
 ### Code
 
-None
+_No response_
 
 ### License

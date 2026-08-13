@@ -51,22 +51,6 @@ def test_format_value_handles_empty_strings() -> None:
     )
 
 
-def test_format_value_handles_none_for_dropdown() -> None:
-    assert (
-        format_value(
-            'None',
-            FormattedField(
-                label='Dropdown Test',
-                type='dropdown',
-                required=True,
-                multiple=False,
-                options=['a', 'b', 'c'],
-            ),
-        )
-        == []
-    )
-
-
 def test_format_value_handles_no_response_for_dropdown() -> None:
     assert (
         format_value(

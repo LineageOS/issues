@@ -8,11 +8,7 @@ from issue_parser.types import FormattedField, ParsedValue
 
 def is_empty_response(value: str) -> bool:
     lowered = value.lower()
-    return (
-        lowered == EmptyResponse.NONE.value.lower()
-        or lowered == EmptyResponse.NO_RESPONSE.value.lower()
-        or value == ''
-    )
+    return lowered == EmptyResponse.NO_RESPONSE.value.lower() or value == ''
 
 
 def format_key(name: str) -> str:

@@ -15,4 +15,3 @@ class EmptyResponse(str, Enum):
     """Special strings used by GitHub issue forms for empty values."""
 
     NO_RESPONSE = '_No response_'
-    NONE = 'None'
